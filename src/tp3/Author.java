@@ -7,6 +7,7 @@ public class Author {
 	private String email;
 	private char gender;
 	
+
 	public Author (String name, String email, char gender) {
 		this.name = name;
 		this.email = email;
@@ -36,5 +37,6 @@ public class Author {
 	public String toString() {
 		return "Author [name = " + name + ", email = " + email + ", gender = " + gender + "]"; 
 	}
+	
 	
 }
