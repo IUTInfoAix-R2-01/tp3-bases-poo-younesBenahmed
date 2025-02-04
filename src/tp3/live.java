@@ -24,6 +24,10 @@ public class live {
         return quantite; 
     } 
     
+    public void setQuantite(int quantite) {
+    	this.quantite = quantite;
+    }
+    
     public String toString() {
         return "nom : " + name + ", prix :  " + price + ", quantite : " + quantite;
     }
