@@ -3,16 +3,19 @@ package tp3;
 public class book {  
 	
 	private String name;
-	private Author[] authors; 
+	private Author authors; 
 	private double price;
 	private int qty = 0 ;
+	private String isbn; 
 	
-	public book(String name, Author[] authors, double price) { 
+	public book(String isbn, String name, Author authors, double price) { 
+		this.isbn = isbn; 
 		this.authors = authors;
 		this.price = price;
 	}
 	
-	public book(String name, Author[] authors, double price, int qty) {
+	public book(String isbn, String name, Author authors, double price, int qty) {
+		this.isbn = isbn; 
 		this.name = name;
 		this.authors = authors;
 		this.price = price;
@@ -23,7 +26,7 @@ public class book {
 		return name;
 	}
 	
-	public Author[] getAuthor() { 
+	public Author getAuthor() { 
 		return authors; 
 	}
 	
@@ -43,27 +46,21 @@ public class book {
 		this.qty = qty; 
 	}
 	
+	public String getIsbn() {
+		return isbn ; 
+	}
 	public String toString() {
-		String authorList = "";
-		for (Author author : authors) {
-			authorList += author.toString() + ", "; 
-		}
 
-		return "Book [name = " + name + ", authors = [" + authorList + "] , price = " + price + ", qty = " + qty + " ]";
+		return "Book [isbn = "+ isbn +", name = " + name + ", authors = [" + authors + "] , price = " + price + ", qty = " + qty + " ]";
 	}
 	
 	public String getAuthorName() { 
-		String liste  = ""; 
-		for (Author author : authors) { 
-			liste += author.getName() + ", "; 		}
-		return liste;
+	
+		return authors.getName();
+
 	}
 	
 	public String getAuthorEMail() { 
-		String emails = "";
-		for (Author author : authors) { 
-			emails += author.getEmail() + ", "; 
-		}
-		return emails;
+		return authors.getEmail(); 
 	}
 }
